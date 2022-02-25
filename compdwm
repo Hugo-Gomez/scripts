@@ -1,0 +1,7 @@
+#! /bin/bash
+
+if [[ -f /opt/dwm/config.h ]]; then
+	rm -f /opt/dwm/config.h
+fi
+cd /opt/dwm
+sudo make clean install

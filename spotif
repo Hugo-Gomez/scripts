@@ -1,0 +1,6 @@
+#! /bin/bash
+
+spotifyd --no-daemon &
+pid=$(echo $!)
+spt
+kill $pid

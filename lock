@@ -1,0 +1,3 @@
+#! /bin/bash
+
+i3lock -ef -i $HOME/Pictures/arch_lock1600x900.png

@@ -1,0 +1,21 @@
+#! /bin/bash
+
+percentage=`cat /sys/class/power_supply/BAT0/capacity`
+status=`cat /sys/class/power_supply/BAT0/status`
+if [ $status == "Discharging" ]; then
+	if [ $percentage -ge 90 ]; then
+		echo "$percentage% "
+	elif [ $percentage -lt 90 ] && [ $percentage -ge 60 ]; then
+		echo "$percentage% "
+	elif [ $percentage -lt 60 ] && [ $percentage -ge 40 ]; then
+		echo "$percentage% "
+	elif [ $percentage -lt 40 ] && [ $percentage -ge 20 ]; then
+		echo "$percentage% "
+	elif [ $percentage -lt 20 ]; then
+		echo "$percentage% "
+	fi
+elif [ $status == "Charging" ]; then
+	echo "$percentage% "
+else
+	echo "$percentage% - $status"
+fi

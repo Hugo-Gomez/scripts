@@ -1,0 +1,8 @@
+#! /bin/bash
+
+status=`cat /sys/class/net/wlp3s0/operstate`
+ip=`curl ipinfo.io/ip`
+
+if [ $status == "up" ]; then
+	echo " $ip"
+fi
