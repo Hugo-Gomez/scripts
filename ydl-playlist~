@@ -1,8 +1,0 @@
-#! /bin/bash
-
-if [ -z "$1" ]; then
-    echo "You must provide an url";
-    exit;
-fi
-
-youtube-dl -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' $1 --extract-audio --audio-format mp3 --rm-cache-dir --playlist-start $2
